@@ -136,14 +136,6 @@ async function deleteItem(index, { dbx }) {
   await uploadList(list, { dbx });
 }
 
-// function createSessionMiddleware(secret) {
-//   return session({
-//     secret,
-//     resave: true,
-//     saveUninitialized: true
-//   });
-// }
-
 function renderView(locals) {
   return `
     <!DOCTYPE html>
