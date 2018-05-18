@@ -1,0 +1,32 @@
+{
+  "name": "task-capture",
+  "version": "1.0.0",
+  "main": "capture.js",
+  "author": "Anil Anar <anilanar@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "dropbox": "^4.0.4",
+    "express": "^4.16.3",
+    "express-basic-auth": "^1.1.5",
+    "express-sanitizer": "^1.0.4",
+    "isomorphic-fetch": "^2.2.1",
+    "lusca": "^1.6.0",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^3.5.1",
+    "edge": "^7.10.1",
+    "nodemon": "^1.17.4",
+    "request": "^2.86.0",
+    "webtask-tools": "^3.2.1"
+  },
+  "scripts": {
+    "bundle": "wt-bundle bundle-entry.js -o build/bundle.js",
+    "bundle-watch": "yarn bundle --watch",
+    "serve": "nodemon -w build/bundle.js --exec wt serve --secrets-file secrets.dev.env build/bundle.js",
+    "start": "concurrently \"yarn bundle-watch\" \"yarn serve\""
+  }
+}
